@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+<script src="src/app.js"></script>
+</head>
+<body ng-controller="mainController" style="margin:0px; height: 100vh;">
+<div class="search-panel-container">
+    <div class="search-panel">
+        <svg class="svg-icon search-icon" aria-labelledby="title desc" 
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+            <g class="search-path" fill="none" stroke="#848F91">
+            <path stroke-linecap="square" d="M14.5 16.3l-5.4-5.4"/>
+            <circle cx="6" cy="8" r="4"/></g>
+        </svg>
+
+        <input placeholder="SEARCH (Client Name / Policy Number)" type="text" ng-change="onSearch()" ng-model="value" />
+    </div>
+    <div class="dropdown-list" ng-show="showDropdownList">
+
+    </div>
+</div>
+
+<link rel='stylesheet' href='dist/styles.min.css'/>
+</body>
+</html>
