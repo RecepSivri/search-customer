@@ -1,5 +1,16 @@
 $search-backgorund-color: #433E5C;
 $search-border:#848F91;
+$search-result-font: #393939;
+$insurance-render-index: #e7e7e7;
+
+@mixin insurance-information-height{
+    height: 40px;
+}
+
+@mixin insurance-information-layout{
+    padding-top: 10px;
+    padding-left: 20px;
+}
 
 @mixin column-layout-start{
     display: flex;
@@ -15,6 +26,19 @@ $search-border:#848F91;
     justify-content: start;
 }
 
+@mixin row-layout-start-start{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+}
+
+@mixin insurance-item-information{
+    font-size: 12px;
+    color: $search-result-font;
+    margin-left: 5px;
+    font-family: Sans-serif;
+}
 
 .search-panel-container{
     width: 100%;
@@ -50,11 +74,64 @@ input {
 
 .dropdown-list{
     width: 100%;
-    height: 300px;
-    background-color: red;
+    max-height: 300px;
+    min-height: 90px;
+    overflow-y: scroll;
     border-bottom:1px solid #433E5C;
     border-left:1px solid #433E5C;
     border-right:1px solid #433E5C;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    @include column-layout-start;
+}
+
+.insurenceBackground{
+    background-color: $insurance-render-index;
+}
+
+.insurence-item{
+    width: 100%;
+    @include column-layout-start;
+    .insurence-name-container{
+        .insurence-name{
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: 15px;
+            color: $search-result-font;
+            font-family: Sans-serif;
+        }
+        width: 100%;
+        height:40px;
+    }
+    .insurence-information{
+        width: 100%;
+        @include row-layout-start-start;
+        .phone-area{
+            width: 20%;
+            .phone-number{
+                @include insurance-item-information;
+            }
+            @include insurance-information-height;
+            @include insurance-information-layout;
+            @include row-layout-start-start;
+        }
+        .mail-area{
+            width: 40%;
+            .mail{
+                @include insurance-item-information;
+            }
+            @include row-layout-start-start;
+            @include insurance-information-height;
+            @include insurance-information-layout;
+        }
+        .policy-area{
+            width: 40%;
+            .policy-number{
+                @include insurance-item-information;
+            }
+            @include row-layout-start-start;
+            @include insurance-information-height;
+            @include insurance-information-layout;
+        }
+    }
 }

@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
       options: {
-        // options here to override JSHint defaults
+        'esversion': 6,
         globals: {
           jQuery: true,
           console: true,
@@ -105,8 +105,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks("grunt-connect-proxy");
   grunt.loadNpmTasks('grunt-contrib-sass');
-
-
+  
   grunt.registerTask('test', ['jshint', 'qunit']);
   grunt.registerTask("serve", "connect:development");
 
