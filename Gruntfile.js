@@ -94,6 +94,14 @@ module.exports = function(grunt) {
           }
       },
         options: {liveload: true}
+      },
+      jasmine: {
+        customTemplate: {
+          src: 'src/*.js',
+          options: {
+            specs: 'spec/*.js',
+          }
+        }
       }
   });
 
@@ -105,10 +113,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks("grunt-connect-proxy");
   grunt.loadNpmTasks('grunt-contrib-sass');
-  
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+
   grunt.registerTask('test', ['jshint', 'qunit']);
   grunt.registerTask("serve", "connect:development");
-
 
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify','sass', 'connect:development', 'watch']);
 

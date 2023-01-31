@@ -23,7 +23,7 @@ app.controller('mainController', ["$scope", function($scope) {
             return val.name.toLowerCase().includes($scope.value.toLowerCase()) || 
             val.phone.toLowerCase().includes($scope.value.toLowerCase()) || 
             val.mail.toLowerCase().includes($scope.value.toLowerCase()) || 
-            val.policyNo.toLowerCase().includes($scope.value.toLowerCase())
+            val.policyNo.toLowerCase().includes($scope.value.toLowerCase());
          });
          $scope.showDropdownList = true;
       }else{
