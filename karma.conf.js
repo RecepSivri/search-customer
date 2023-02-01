@@ -1,5 +1,3 @@
-
-
 module.exports = function(config) {
   config.set({
 
@@ -15,7 +13,6 @@ module.exports = function(config) {
       'src/app.js',
       'test/test.spec.js',
     ],
-
 
     exclude: [
     ],
